@@ -12,9 +12,9 @@ public class Sakila
     //       Don't forget to close them both in order to avoid leaks.
     try
     (
-      // create a database connection
-      Connection connection = DriverManager.getConnection("jdbc:sqlite:./sqlite-sakila.db");
-      Statement statement = connection.createStatement();
+    // create a database connection
+    Connection connection = DatabaseConnection.getInstance();
+    Statement statement = connection.createStatement();
     )
     {
       statement.setQueryTimeout(30);  // set timeout to 30 sec.
